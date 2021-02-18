@@ -1,21 +1,30 @@
-import { videos } from "../fakeDB.js"
-import routes from "../routes.js"
+import User from "../models/User.js";
+import routes from "../routes.js";
 
 
-export const getJoin = (req, res) => {
+export const getJoin = (req, res, next) => {
 	res.render('join', {pageTitle:"Join"});
 };
-export const postJoin = (req, res) => {
-	const {
-		body: {name, email, password, password2}
-	} = req;
-	if(password !== password2){
-		res.status(400);
-		res.render("join", { pageTitle:"Join"})
-	}else{
+export const postJoin = async (req, res, next) => {
+		const {
+			body: {name, email, password, password2}
+		} = req;
+		if(password !== password2){
+			res.status(400);
+			res.render("join", { pageTitle:"Join"});
+		}else{
+			try{
+				const user = await User({  //User.creat
+					name,
+					email
+				});
+				await User.register(user, password);
+			}catch(error){
+				console.error(error);
+				res.send('error page');
+			}
+		}
 		res.redirect(routes.home);
-	}
-	res.render('join', {pageTitle:"Join"});
 };
 
 
