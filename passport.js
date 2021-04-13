@@ -1,4 +1,5 @@
 import passport from "passport";
+<<<<<<< HEAD
 import dotenv from "dotenv";
 import User from "./models/User";
 import routes from "./routes.js";
@@ -24,3 +25,11 @@ passport.deserializeUser(User.deserializeUser());
 
 
 export default passport;
+=======
+import User from "./models/User";
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+>>>>>>> 0e4c58247d31f339d15c50446df494aa30527f62

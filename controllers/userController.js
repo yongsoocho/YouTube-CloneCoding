@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import passport from "passport";
+=======
+>>>>>>> 0e4c58247d31f339d15c50446df494aa30527f62
 import User from "../models/User.js";
 import routes from "../routes.js";
 
@@ -20,6 +23,7 @@ export const postJoin = async (req, res, next) => {
 					email
 				});
 				await User.register(user, password);
+<<<<<<< HEAD
 				next();
 			}catch(error){
 				console.error(error);
@@ -68,6 +72,26 @@ export const postGithubLogin = (req, res) => {
 export const logout = (req, res) => {
 	//something
 	req.logout();
+=======
+			}catch(error){
+				console.error(error);
+				res.send('error page');
+			}
+		}
+		res.redirect(routes.home);
+};
+
+
+export const getLogin = (req, res) => {
+	res.render('login', {pageTitle:"Log In"});
+};
+export const postLogin = (req, res) => {
+	res.redirect(routes.home);
+};
+
+export const logout = (req, res) => {
+	//something
+>>>>>>> 0e4c58247d31f339d15c50446df494aa30527f62
 	res.redirect(routes.home);
 };
 
@@ -79,6 +103,7 @@ export const changePassword = (req, res) => {
 	res.render('changePassword', {pageTitle:"changePassword"});
 };
 
+<<<<<<< HEAD
 export const getMe = (req, res) => {
 	res.render('userDetail', {pageTitle:"userDetail", user: req.user});
 };
@@ -90,4 +115,8 @@ export const userDetail = async (req, res) => {
 	}catch(error){
 		res.redirect(routes.home);
 	}
+=======
+export const userDetail = (req, res) => {
+	res.render('profile', {pageTitle:"profile"});
+>>>>>>> 0e4c58247d31f339d15c50446df494aa30527f62
 };

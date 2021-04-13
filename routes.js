@@ -11,7 +11,10 @@ const USERS = "/users";
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 const USER_DETAIL = "/:id";
+<<<<<<< HEAD
 const ME = "/me";	
+=======
+>>>>>>> 0e4c58247d31f339d15c50446df494aa30527f62
 
 //videos
 const VIDEOS = "/videos";
@@ -20,10 +23,13 @@ const VIDEOS_DETAIL = "/:id";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
 
+<<<<<<< HEAD
 //GITHUB
 const GITHUB = "/auth/github";
 const GITHUB_CALLBACK = "/auth/github/callback";
 
+=======
+>>>>>>> 0e4c58247d31f339d15c50446df494aa30527f62
 const routes = {
 	home: HOME,
 	join: JOIN,
@@ -62,10 +68,14 @@ const routes = {
 		}else{
 			return DELETE_VIDEO;
 		}
+<<<<<<< HEAD
 	},
 	github:GITHUB,
 	githubCallback:GITHUB_CALLBACK,
 	me:ME
+=======
+	}
+>>>>>>> 0e4c58247d31f339d15c50446df494aa30527f62
 };
 
 export default routes;

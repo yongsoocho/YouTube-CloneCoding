@@ -7,7 +7,11 @@ header.header
 			input(type="text", placeholder="search by term..", name="term")
 	div.header_column
 		ul
+<<<<<<< HEAD
 			if !loggedUser
+=======
+			if !user.isAuthenticated
+>>>>>>> 0e4c58247d31f339d15c50446df494aa30527f62
 				li
 					a(href=routes.join) Join
 				li
@@ -16,6 +20,10 @@ header.header
 				li
 					a(href=`/videos/${routes.upload}`) Upload
 				li
+<<<<<<< HEAD
 					a(href=routes.me) Profile
+=======
+					a(href=routes.userDetail(user.id)) Profile
+>>>>>>> 0e4c58247d31f339d15c50446df494aa30527f62
 				li
 					a(href=routes.logout) Log Out
